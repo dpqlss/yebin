@@ -52,8 +52,7 @@ table {
 *{box-sizing: border-box;}
 .wrap{width:100%; height: 100vh; position: relative;}
 
-.itd {position: fixed; top:0; left: 0; z-index: 5; width:32%; height: 100vh; background-color: #7bc4bf; text-align: center; display: flex; flex-direction: column;
-  justify-content: center; align-items: center;}
+.itd {position: fixed; top:0; left: 0; z-index: 5; width:32%; height: 100vh; background-color: #7bc4bf; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;}
 .inner {text-align: left;}
 .title {line-height:36px; color:#fff;}
 .title h1 {margin:30px 0; font-family: 'BMDOHYEON'; font-size: 36px;}
@@ -63,10 +62,11 @@ table {
 .header {position: fixed; top:0; left: 0; z-index: 1; padding-left:calc(32% + 100px) ; width: 100%; height:100px; background-color: #fff; font-family:'NanumSquare'; font-weight: 400; font-size: 24px;}
 .header ul {height: 100%; display: flex; align-items: center;}
 .header ul li {margin-right: 100px;}
+.header ul li a {display: inline-block; width: 130px;}
 
-.about {height: 100vh; padding-left:100px; display: flex; align-items: flex-start; flex-direction: column; justify-content: center}
+.about {height: 100vh; padding-left:100px; display: flex; align-items: flex-start; flex-direction: column; justify-content: center;}
 .me h2 {font-family:'BMDOHYEON'; font-size: 50px; margin-bottom: 30px;}
-.me p {font-family:'NanumSquare'; font-size: 20px; font-weight: 400px; line-height: 30px; margin-bottom: 50px;}
+.me p {font-family:'NanumSquare'; font-size: 18px; font-weight: 400px; line-height: 28px; margin-bottom: 50px;}
 .btn {width:260px; height: 60px; background-color: #7aba9b; border-radius:50px;}
 .btn a {display:block; position: relative; font-family:'NanumSquare'; font-weight: 800; font-size:24px; color:#fff; padding: 18px 50px;}
 .btn a:after {content: ''; position: absolute; top: 35%; right: 16%; width: 14px; height: 14px; border-top: 2px solid #fff; border-right: 2px solid #fff; transform: rotate(45deg);}
@@ -79,3 +79,32 @@ table {
 .percent ul li span {display: block; opacity:0; transition: all 0.5s;}
 .percent ul li:hover {padding-top: 50px;}
 .percent ul li:hover span {opacity:1;}
+
+/*반응형*/
+@media (max-width: 767px){
+	/*모바일*/
+	.itd {width:100%; height: 30vh; white-space:normal;}
+	.inner {display: flex; align-items: center; margin: 30px 100px;} 
+	.myimg img{ width: 140px; height: 140x;}
+	.title {margin-left: 5%;}
+	.title h1 {width: 260px; font-size: 20px; margin: 10px 0;}
+
+	.header {top:30%; padding-left: 10%; font-size: 20px;}
+	.con {position: relative; top: 30%; padding-left: 0;}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /*테블릿 세로*/
+		.itd {width:100%; height: 40vh; display: flex; justify-content: flex-start; align-items: flex-start;}
+		.inner {display: flex; align-items: center; margin: 30px 50px;} 
+		.myimg img{ width: 210px; height: 210px;}
+		.title {margin-left: 10%;}
+		.title h1 {width: 260px; font-size: 30px; margin: 20px 0;}
+
+		.header {top:40%; padding-left: 10%;}
+		.con {position: relative; top: 30%; padding-left: 0;}
+}
+
+/*@media (min-width: 1200px) {
+    // 데스크탑 일반
+}*/
