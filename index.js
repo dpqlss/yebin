@@ -39,4 +39,15 @@ $(document).ready(function(){
     });
   });
 
+  //갤러리 슬라이드 효과
+  $('.slider-wrap').slick({
+      infinite: true, //슬라이드가 무한루틴
+      autoplay: false, //슬라이드 자동
+      autoplaySpeed: 3000, //슬라이드 자동으로 넘어가는 시간 1000 = 1초
+      speed: 500, //슬라이드 속도
+      arrows: false, //화살표
+      dots: false, // 점
+      slidesToShow: 1, //슬라이드가 보이는 갯수
+      slidesToScroll: 1 //슬라이드 넘어가는 갯수
+   });
 });

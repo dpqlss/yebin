@@ -81,6 +81,13 @@ table {
 .percent ul li:hover {padding-top: 50px;}
 .percent ul li:hover span {opacity:1;}
 
+.gallery {height: 100vh; padding-left:100px; display: flex; align-items: flex-start; flex-direction: column; justify-content: center;}
+.gallery h2 {font-family:'BMDOHYEON'; font-size: 50px; margin-bottom: 50px;}
+.slider-wrap {width: 100%; height: 400px;}
+.slick-prev {position: absolute; top:50%; left: 0%; width: 20px; height: 20px; cursor: pointer; border: none; z-index: 10; padding: 0;}
+.slick-prev:before {content: '←';}
+
+
 /*반응형*/
 @media (max-width: 767px){
 	/*모바일*/
