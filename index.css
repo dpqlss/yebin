@@ -61,12 +61,12 @@ table {
 .con {background-color: #f5f5f5; width:100%; height: 100vh; padding-left: 32%; padding-top: 100px; display: flex; flex-direction: column; align-content: space-between;}
 .header {position: fixed; top:0; left: 0; z-index: 1; padding-left:calc(32% + 100px) ; width: 100%; height:100px; background-color: #fff; font-family:'NanumSquare'; font-weight: 400; font-size: 24px;}
 .header ul {height: 100%; display: flex; align-items: center;}
-.header ul li {margin-right: 100px; }
+.header ul li {flex: auto;}
 .header ul li a {display: inline-block; width: 150px; text-align: center; padding: 10px;}
 .header .on {color:#7aba9b;}
 
 .about {height: 100vh; padding-left:100px; display: flex; align-items: flex-start; flex-direction: column; justify-content: center;}
-.me h2 {font-family:'BMDOHYEON'; font-size: 50px; margin-bottom: 30px;}
+.me h2 {font-family:'BMDOHYEON'; font-size: 50px; margin-bottom: 40px;}
 .me p {font-family:'NanumSquare'; font-size: 18px; font-weight: 400px; line-height: 28px; margin-bottom: 50px;}
 .btn {width:260px; height: 60px; background-color: #7aba9b; border-radius:50px;}
 .btn a {display:block; position: relative; font-family:'NanumSquare'; font-weight: 800; font-size:24px; color:#fff; padding: 18px 50px;}
@@ -76,39 +76,88 @@ table {
 .skill h2 {font-family:'BMDOHYEON'; font-size: 50px; margin-bottom: 50px;}
 .percent {width: 92%; font-family:'NanumSquare'; font-weight: 700; font-size: 20px; color: #fff;}
 .percent ul {height: 400px; text-align: center; display: flex; align-content: space-between; flex-wrap: wrap; justify-content: space-between;}
-.percent ul li {width: 30%; height: 180px; padding-top: 70px; line-height: 36px; background: linear-gradient(120deg, #7aba9b, #7bc4bf); transition: all 0.5s;}
+.percent ul li {width: 30%; height: 180px; padding: 70px 0; line-height: 36px; background: linear-gradient(120deg, #7aba9b, #7bc4bf); transition: all 0.5s;}
 .percent ul li span {display: block; opacity:0; transition: all 0.5s;}
 .percent ul li:hover {padding-top: 50px;}
 .percent ul li:hover span {opacity:1;}
 
 .gallery {height: 100vh; padding-left:100px; display: flex; align-items: flex-start; flex-direction: column; justify-content: center;}
 .gallery h2 {font-family:'BMDOHYEON'; font-size: 50px; margin-bottom: 50px;}
-.slider-wrap {width: 100%; height: 400px;}
+.slider-wrap {width: 100%; height: 400px; max-width: 800px; position: relative;}
 
+.slick-arrow {position: absolute; top:50%; transform:translateY(-50%); z-index: 10; cursor: pointer; font-size: 0; width: 50px; height: 50px; border-radius: 50%; border:0;}
+.slick-prev {left: 20px; background:rgba(255,255,255,0.5) url(prev.png) no-repeat center fixed;}
+.slick-next {right: 20px; background:rgba(255,255,255,0.5) url(next.png) no-repeat center fixed;}
+
+.slick-dots {display: flex; justify-content: center; margin: -30px 0 0 0; position: relative; z-index: 10; }
+.slick-dots li {padding: 0 10px;}
+.slick-dots li button {font-size: 0; border:0; border-radius: 50%; width: 12px; height: 12px; display: block; background-color: #ddd; cursor: pointer;}
+.slick-dots li.slick-active button {background: #7aba9b;}
 
 /*반응형*/
 @media (max-width: 767px){
 	/*모바일*/
-	.itd {width:100%; height: 30vh; white-space:normal;}
-	.inner {display: flex; align-items: center; margin: 30px 100px;} 
-	.myimg img{ width: 140px; height: 140x;}
-	.title {margin-left: 5%;}
-	.title h1 {width: 260px; font-size: 20px; margin: 10px 0;}
+	.itd {width:100%; height: 280px; display: flex; justify-content: flex-start; align-items: flex-start;}
+	.inner {display: flex; align-items: center; margin: 40px 20px;} 
+	.myimg img{ width: 200px; height: 200px;}
+	.title {margin-left: 8%; line-height:32px;}
+	.title h1 {width: 260px; font-size: 30px; margin: 20px 0;}
 
-	.header {top:30%; padding-left: 10%; font-size: 20px;}
-	.con {position: relative; top: 30%; padding-left: 0;}
+	.header {height: 80px; top:280px; font-size: 20px;}
+	.header ul {width: 100%; position: absolute; left: 0; top: 0;}
+	.header ul li{text-align: center;}
+	
+	.con {padding: 420px 0;}
+
+	.about {width: 100%; padding:0 10%;}
+	.me h2 {font-size: 32px; margin: 50px 0 30px;}
+	.me p {margin-bottom: 30px;}
+	.btn {width:160px; height: 42px; background-color: #7aba9b; border-radius:50px;}
+	.btn a {font-size:18px; padding: 12px 36px;}
+	.btn a:after {width: 10px; height: 10px;}
+
+	.skill {width: 100%; padding:0 10%;}
+	.skill h2 {font-size: 32px;}
+	.percent {font-size: 18px;}
+	.percent ul li {height: 110px; padding: 38px 0; line-height: 30px;}
+	.percent ul li:hover {padding-top: 30px;}
+
+	.gallery {width: 100%; padding:0 10%;}
+	.gallery h2 {font-size: 32px; margin-bottom: 40px;}
+	.slider-wrap {height: 280px; max-width: 600px;}
+	.gallery-img img {width: 100%; height: 100%;}
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     /*테블릿 세로*/
-		.itd {width:100%; height: 40vh; display: flex; justify-content: flex-start; align-items: flex-start;}
+		.itd {width:100%; height: 280px; display: flex; justify-content: flex-start; align-items: flex-start;}
 		.inner {display: flex; align-items: center; margin: 30px 50px;} 
 		.myimg img{ width: 210px; height: 210px;}
 		.title {margin-left: 10%;}
 		.title h1 {width: 260px; font-size: 30px; margin: 20px 0;}
 
-		.header {top:40%; padding-left: 10%;}
-		.con {position: relative; top: 30%; padding-left: 0;}
+		.header {height: 90px; top:280px; font-size: 22px;}
+		.header ul {width: 100%; position: absolute; left: 0; top: 0;}
+		.header ul li{text-align: center;}
+	
+		.con {padding: 460px 20px;}
+		.about {width: 100%; padding:0 10%;}
+		.me h2 {font-size: 40px;}
+		.btn {width:240px; height: 50px; background-color: #7aba9b; border-radius:50px;}
+		.btn a {font-size:22px; padding: 14px 40px;}
+		.btn a:after {width: 12px; height: 12px;}
+
+		.skill {width: 100%; padding:0 10%;}
+		.skill h2 {font-size: 40px;}
+		.percent ul li {height: 160px; padding: 60px 0;}
+
+		.gallery {width: 100%; padding:0 10%;}
+		.gallery h2 {font-size: 40px;}
+		.slider-wrap {height: 340px; max-width: 700px;}
+		.gallery-img img {width: 100%; height: 100%;}
+		
+
 }
 
 /*@media (min-width: 1200px) {

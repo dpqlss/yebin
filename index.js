@@ -49,5 +49,5 @@ $(document).ready(function(){
       dots: true, // 점
       //slidesToShow: 1, 슬라이드가 보이는 갯수
       //slidesToScroll: 1, 슬라이드 넘어가는 갯수
-   });
+    });
 });
