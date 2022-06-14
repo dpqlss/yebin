@@ -65,7 +65,7 @@ table {
 .header ul li a {display: inline-block; width: 150px; text-align: center; padding: 10px;}
 .header .on {color:#7aba9b;}
 
-.about {height: 100vh; padding-left:100px; display: flex; align-items: flex-start; flex-direction: column; justify-content: center;}
+.about {height: 100vh; padding-left: 100px; display: flex; align-items: flex-start; flex-direction: column; justify-content: center;}
 .me h2 {font-family:'BMDOHYEON'; font-size: 50px; margin-bottom: 40px;}
 .me p {font-family:'NanumSquare'; font-size: 18px; font-weight: 400px; line-height: 28px; margin-bottom: 50px;}
 .btn {width:260px; height: 60px; background-color: #7aba9b; border-radius:50px;}
@@ -108,8 +108,9 @@ canvas {background-color: aliceblue;}
 	.title h1 {width: 260px; font-size: 30px; margin: 20px 0;}
 
 	.header {height: 80px; top:280px; font-size: 20px;}
-	.header ul {width: 100%; position: absolute; left: 0; top: 0;}
+	.header ul {width: 100%; position: absolute; left: 10px; top: 0;}
 	.header ul li{text-align: center;}
+	.header ul li a {display: inline-block; width: 100px; text-align: center; padding: 5px;}
 	
 	.con {padding: 420px 0;}
 
@@ -130,6 +131,11 @@ canvas {background-color: aliceblue;}
 	.gallery h2 {font-size: 32px; margin-bottom: 40px;}
 	.slider-wrap {height: 280px; max-width: 600px;}
 	.gallery-img img {width: 100%; height: 100%;}
+	.slick-arrow {top:30%; width: 30px; height: 30px;}
+
+	.game {width: 100%; padding:0 10%;}
+	.game h2 {margin: 50px 0; font-size: 32px;}
+	canvas {width: 340px; height: 260px;}
 
 }
 
@@ -142,8 +148,9 @@ canvas {background-color: aliceblue;}
 		.title h1 {width: 260px; font-size: 30px; margin: 20px 0;}
 
 		.header {height: 90px; top:280px; font-size: 22px;}
-		.header ul {width: 100%; position: absolute; left: 0; top: 0;}
+		.header ul {width: 100%; position: absolute; left: 10px; top: 0;}
 		.header ul li{text-align: center;}
+		.header ul li a {display: inline-block; width: 110px; text-align: center; padding: 5px;}
 	
 		.con {padding: 460px 20px;}
 		.about {width: 100%; padding:0 10%;}
@@ -160,7 +167,11 @@ canvas {background-color: aliceblue;}
 		.gallery h2 {font-size: 40px;}
 		.slider-wrap {height: 340px; max-width: 700px;}
 		.gallery-img img {width: 100%; height: 100%;}
-		
+		.slick-arrow {top:30%; width: 30px; height: 30px;}
+
+		.game {width: 100%; padding:0 10%;}
+		.game h2 {margin: 50px 0; font-size: 40px;}
+		canvas {width: 480px; height: 320px;}
 
 }
 
