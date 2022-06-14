@@ -94,6 +94,10 @@ table {
 .slick-dots li button {font-size: 0; border:0; border-radius: 50%; width: 12px; height: 12px; display: block; background-color: #ddd; cursor: pointer;}
 .slick-dots li.slick-active button {background: #7aba9b;}
 
+.game {height: 100vh; padding-left:100px; background-color: rgb(207, 240, 238); display: flex;align-items: flex-start;flex-direction: column; justify-content: center;}
+.game h2 {font-family:'BMDOHYEON'; font-size: 50px; margin-bottom: 50px;}
+canvas {background-color: aliceblue;}
+
 /*반응형*/
 @media (max-width: 767px){
 	/*모바일*/
