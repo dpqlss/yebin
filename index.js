@@ -1,6 +1,3 @@
-//경고창 띄우기
-//alert("경고")
-
 $(document).ready(function(){ 
   //메뉴를 클릭하면, 몇번째 메뉴를 클릭했는지 순번 확인, 그 순번에 해당하는 내용이 화면 상단에서 얼마 떨어져 있는지 거리를 확인해야함
   //html,body,에 스크롤양을 확인한 수치만큼 준다. - animate메서드를 이용하여 애니메이션이 되게 한다.
@@ -26,6 +23,15 @@ $(document).ready(function(){
     }
     var posTop =(page-1) * $(window).height();
     mHtml.animate({scrollTop : posTop});
+
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // We listen to the resize event
+    window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
 })
 
   //메뉴 클릭 시 이동
@@ -69,7 +75,6 @@ $(document).ready(function(){
       //slidesToShow: 1, 슬라이드가 보이는 갯수
       //slidesToScroll: 1, 슬라이드 넘어가는 갯수
     });
-
     //game
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
@@ -205,25 +210,25 @@ $(document).ready(function(){
       if(y + dy < ballRadius) {
         dy = -dy;
       }
-      // else if(y + dy > canvas.height-ballRadius) {
-      //   if(x > paddleX && x < paddleX + paddleWidth) {
-      //     dy = -dy;
-      //   }
-      //   else {
-      //     lives--;
-      //     if(!lives) {
-      //       alert("GAME OVER");
-      //       document.location.reload();
-      //     }
-      //     else {
-      //       x = canvas.width/2;
-      //       y = canvas.height-30;
-      //       dx = 3;
-      //       dy = -3;
-      //       paddleX = (canvas.width-paddleWidth)/2;
-      //     }
-      //   }
-      // }
+      else if(y + dy > canvas.height-ballRadius) {
+        if(x > paddleX && x < paddleX + paddleWidth) {
+          dy = -dy;
+        }
+        else {
+          lives--;
+          if(!lives) {
+            alert("GAME OVER");
+            document.location.reload();
+          }
+          else {
+            x = canvas.width/2;
+            y = canvas.height-30;
+            dx = 3;
+            dy = -3;
+            paddleX = (canvas.width-paddleWidth)/2;
+          }
+        }
+      }
     
       if(rightPressed && paddleX < canvas.width-paddleWidth) {
         paddleX += 7;
